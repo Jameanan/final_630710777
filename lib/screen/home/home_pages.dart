@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _dio = Dio(BaseOptions(responseType: ResponseType.plain));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class _HomePageState extends State<HomePage> {
                 Text('Bangkok',
                     style:
                         TextStyle(
-                            fontSize: 60.0,
+                            fontSize: 50.0,
                             fontWeight: FontWeight.bold
                         )
                 ),
@@ -74,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                     Text('27.9',
                         style:
                         TextStyle(
-                            fontSize: 60.0,
+                            fontSize: 40.0,
                             fontWeight: FontWeight.bold
                         )
                     ),
@@ -131,6 +133,40 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('°C',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(2),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('°F',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black12
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           )
         ]
         ),
