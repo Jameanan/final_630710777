@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('27.8',
+                    Text('27.9',
                         style:
                         TextStyle(
                             fontSize: 60.0,
